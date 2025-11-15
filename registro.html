@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>EduMentor - Registro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4; /* Fondo gris claro de la página */
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* 1. Encabezado superior negro */
+        .top-bar {
+            background-color: #333; /* Más oscuro para que coincida con la imagen */
+            color: white;
+            padding: 8px 20px;
+            display: flex;
+            justify-content: flex-end; /* Alinea a la derecha para que los datos estén juntos */
+            align-items: center;
+            gap: 20px;
+            font-size: 13px;
+        }
+
+        .top-bar span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* 2. Barra de navegación amarilla */
+        .nav-bar {
+            background-color: #F5BE6B;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .logo img {
+            width: 30px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+        }
+
+        .nav-links a.active {
+            border-bottom: 2px solid #333;
+        }
+        
+        /* 3. Contenedor Principal (Registro) */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alinea el contenido arriba */
+            padding-top: 50px; /* Espacio debajo de la barra de navegación */
+        }
+
+        .register-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .register-card h2 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Botones de Rol (Alumno/Tutor) */
+        .role-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .role-button {
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            width: 50%;
+        }
+
+        .role-button.alumno {
+            background-color: white;
+            color: #333;
+            border-color: #ccc;
+        }
+
+        .role-button.tutor {
+            background-color: #79D698; /* Verde similar al de la imagen */
+            color: white;
+            border-color: #79D698;
+        }
+
+        /* Campos de formulario */
+        .form-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        .form-group.full-width input {
+            width: 100%;
+        }
+        
+        /* Botón Continuar */
+        .continue-btn {
+            background-color: white;
+            color: #333;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        /* Botones de Redes Sociales */
+        .social-buttons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+
+        .social-buttons a img {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        /* Icono WhatsApp fijo */
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+
+        .whatsapp-icon img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1); /* Hace que el ícono de WhatsApp se vea blanco */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <span>Contact us: +593 98 541 2458</span>
+        <span>capacitacion@tutorias.ec</span>
+        <span>Mas de 15.000 Profesionales Certificados</span>
+    </div>
+
+    <div class="nav-bar">
+        <div class="logo">
+            <img src="logo.png" alt="Logo EduMentor" />
+            EduMentor
+        </div>
+        <div class="nav-links">
+            <a href="#">INICIO</a>
+            <a href="#">Docentes</a>
+            <a href="#">Perfil</a>
+            <a href="#" class="active">Iniciar sesión</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="register-card">
+            <h2>Registrese gratis con su correo electrónico laboral/institucional</h2>
+
+            <div class="role-buttons">
+                <div class="role-button alumno">Registro como Alumno</div>
+                <div class="role-button tutor">Registro como Tutor</div>
+            </div>
+
+            <form>
+                <div class="form-group full-width">
+                    <input type="email" placeholder="Ingrese su correo institucional/laboral">
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" placeholder="Ingrese su nombre">
+                    <input type="text" placeholder="Ingrese su Apellido">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" placeholder="Ingrese su Edad">
+                    <input type="text" placeholder="Ingrese su Especialización">
+                </div>
+
+                <button type="button" class="continue-btn">Continuar</button>
+            </form>
+            
+            <div class="social-buttons">
+                <a href="#">
+                    <img src="https://img.icons8.com/color/48/google-logo.png" alt="Google Logo">
+                    Registrarse con Google
+                </a>
+                <a href="#">
+                    <img src="https://img.icons8.com/fluency/48/linkedin.png" alt="LinkedIn Logo">
+                    Registrarse con Linkedin
+                </a>
+                <a href="#">
+                    <img src="https://img.icons8.com/ios-filled/50/mac-os.png" alt="Apple Logo">
+                    Registrarse con Apple
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <a href="#" class="whatsapp-icon">
+        <img src="https://img.icons8.com/material-rounded/48/ffffff/whatsapp--v1.png" alt="WhatsApp Icon" />
+    </a>
+
+</body>
+</html>
