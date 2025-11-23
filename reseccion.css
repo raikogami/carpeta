@@ -1,0 +1,82 @@
+/* Estilos específicos para la página de login */
+.login-container {
+  min-height: calc(100vh - 120px); /* altura total menos barras superiores */
+  background-color: #f9f9f9;
+}
+
+.login-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px 30px;
+}
+
+.login-content h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.login-content p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.primary-login {
+  background-color: #f5b700 !important;
+  color: #333 !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.primary-login:hover {
+  background-color: #e0a000 !important;
+  transform: translateY(-2px);
+}
+
+.social-login .btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.social-login .btn:hover {
+  transform: scale(1.1);
+}
+
+.linkedin { color: #0A66C2; }
+.google { color: #DB4437; }
+.apple { color: #000; }
+
+.terms a {
+  color: #f5b700;
+  text-decoration: underline;
+}
+
+.terms a:hover {
+  color: #e0a000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .login-content {
+    padding: 30px 20px;
+  }
+
+  .login-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .login-content p {
+    font-size: 0.95rem;
+  }
+}

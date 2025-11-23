@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduMentor - Iniciar Sesión</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="reseccion-page"> <!-- ⚠️ IMPORTANTE: clase para identificar la página -->
+
+  <!-- Barra superior negra -->
+  <div class="top-bar bg-dark text-white py-2 text-center">
+    <span>Contact us: 📞 +593 98 541 2458</span>
+    <span>✉️ capacitacion@tutorias.ec</span>
+    <span>🎓 Más de 15.000 Profesionales Certificados</span>
+  </div>
+
+  <!-- Barra de navegación amarilla -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-warning px-4">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="inicio.html">
+        <img src="img/logo.png" alt="Logo EduMentor" width="64" height="46" class="me-2">
+        EduMentor
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="inicio.html">INICIO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Docentes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link login-btn" href="iniciodecesion.html">Iniciar sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="login-container d-flex align-items-center justify-content-center py-5">
+    <div class="login-content text-center p-4 bg-white rounded shadow-sm" style="max-width: 500px; width: 90%;">
+      <h1 class="mb-4">EDUMENTOR</h1>
+      <p class="mb-4">
+        Descubre una plataforma donde estudiantes y tutores se conectan para aprender, enseñar y crecer juntos.<br>
+        Toma el control de tu aprendizaje o comparte tu conocimiento.
+      </p>
+
+      <a href="iniciodecesion.html" class="btn btn-warning primary-login w-100 py-2 mb-4 text-decoration-none">
+        INICIAR SESIÓN
+      </a>
+
+      <div class="social-login d-flex justify-content-center gap-3 mb-4">
+        <button id="btn-linkedin" class="btn btn-light social-btn">in</button>
+        <button id="btn-google" class="btn btn-light social-btn">G</button>
+        <button id="btn-apple" class="btn btn-light social-btn"></button>
+      </div>
+
+      <p class="small mb-2">
+        ¿No tienes cuenta? <a href="iniciodecesion.html" class="text-decoration-none">Crear una cuenta</a>
+      </p>
+
+      <p class="terms small text-muted">
+        Al registrarte, aceptas nuestros <a href="#">Términos de servicio</a> y nuestra <a href="#">Política de
+          privacidad</a>.
+      </p>
+    </div>
+  </main>
+
+  <!-- WhatsApp fijo -->
+  <a href="https://wa.me/593985412458" target="_blank"
+    class="whatsapp-icon position-fixed bottom-0 end-0 m-3 d-flex align-items-center justify-content-center rounded-circle bg-success text-white shadow">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript funcional -->
+  <script src="script.js"></script>
+</body>
+
+</html>
